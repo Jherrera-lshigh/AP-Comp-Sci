@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+public class Lastfirst {
+    public static void main(String [] args)
+    {
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("First name");
+        String firstname = keyboard.nextLine();
+        System.out.println("Last name");
+        String lastname = keyboard.nextLine();
+
+        System.out.println(lastname + firstname);
+    }
+}
