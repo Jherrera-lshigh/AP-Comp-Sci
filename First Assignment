@@ -13,7 +13,7 @@ public class apples {
         //System.out.println("You said " + input);
 
         System.out.println("there are " + input.length() + " character in your word");
-        System.out.println("The second to last letter is: "input.charAt(input.length(-2)));
+        System.out.println("The second to last letter is: " + input.charAt(input.length()-2));
 
     }
 }
