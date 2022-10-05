@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
 public class Adventure {
-
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         Scanner keyboard = new Scanner(System.in);
 
         System.out.println("Welcome to the Adventure Game!");
@@ -232,25 +232,38 @@ public class Adventure {
                         choice4.toLowerCase();
                     }
 
-                    if (choice4.equals("yes")) {
+                    if (choice4.equals("yes")) 
+                    {
                         System.out.println(
                                 "inside the house you can go upstairs or go to the kitchen. Where do you want to go?");
                         System.out.println("You realize you are in an endless timeloop and you can't escape.");
                     }
+                    else
+                    {
+                        System.out.println("You make it to the edge of town and realize that the world has ended and you are the last humnan alive. At that moment the world gives away and you fall through the earth and die.");
+                    }
                 }
-            } else {
+                else
+                {
+                    System.out.println("You don't fill up your tank and run out of gas. You die");
+                }
+            } 
+            else 
+            {
                 System.out.println(
                         "You don't drive away and in the distance you find soemone. Do you want to go to them?");
                 System.out.println("Type Yes or No");
                 String choice5 = keyboard.next();
                 choice5.toLowerCase();
 
-                while (!choice5.equals("yes") && !choice5.equals("no")) {
+                while (!choice5.equals("yes") && !choice5.equals("no")) 
+                {
                     System.out.println("Please type Yes or No");
                     choice5 = keyboard.next();
                     choice5.toLowerCase();
                 }
-                if (choice5.equals("yes")) {
+                if (choice5.equals("yes")) 
+                {
                     System.out.println(
                             "You go to them and they are a serial killer. Do you want to fight them or run away?");
                     System.out.println("Type fight or run");
@@ -263,10 +276,13 @@ public class Adventure {
                         choice6.toLowerCase();
                     }
 
-                    if (choice6.equals("fight")) {
+                    if (choice6.equals("fight")) 
+                    {
                         System.out.println(
                                 "You fight the serial killer and you win. You go to the police and they arrest the serial killer. And get a reward. You win!");
-                    } else {
+                    } 
+                    else 
+                    {
                         System.out.println(
                                 "You run away and the serial killer chases you. You run into a store and hide. Do you leave or wait?");
                         System.out.println("Type leave or wait");
@@ -302,10 +318,11 @@ public class Adventure {
                                         "You run away and the eagle feels threatened and flies at you and kills you. You lose!");
                             }
                         }
-                        keyboard.close();
                     }
 
-                } else {
+                } 
+                else 
+                {
                     System.out.println(
                             "You don't go to them and the person starts to chase you. you run and find a building. Do you want to go in?");
                     System.out.println("Type Yes or No");
@@ -318,32 +335,37 @@ public class Adventure {
                         choice9.toLowerCase();
                     }
 
-                    if (choice9.equals("yes")) {
+                    if (choice9.equals("yes")) 
+                    {
                         System.out.println("You go in the building and find a magic chect. Do you want open it?");
                         System.out.println("Type yes or no");
                         String choice10 = keyboard.next();
                         choice10.toLowerCase();
 
-                        while (!choice10.equals("yes") && !choice10.equals("no")) {
+                        while (!choice10.equals("yes") && !choice10.equals("no")) 
+                        {
                             System.out.println("Please type yes or no");
                             choice10 = keyboard.next();
                             choice10.toLowerCase();
                         }
 
-                        if (choice10.equals("yes")) {
+                        if (choice10.equals("yes")) 
+                        {
                             System.out
                                     .println("You open the chest and find amulet that gives you magic power, you win");
-                        } else {
-                            System.out.println(
-                                    "You don't open the chest and the person who was chasing you finds you and kills you. You lose");
+                        } 
+                        else 
+                        {
+                            System.out.println( "You don't open the chest and the person who was chasing you finds you and kills you. You lose");
                         }
-                        keyboard.close();
-                    } else {
-                        System.out.println(
-                                "You don't go in the building and the person who was chasing you finds you and kills you. You lose");
+                    }
+                    else 
+                    {
+                    System.out.println( "You don't go in the building and the person who was chasing you finds you and kills you. You lose");
                     }
                 }
             }
         }
+    keyboard.close();
     }
 }
