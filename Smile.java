@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class smile extends JPanel 
+public class Smile extends JPanel 
 {
     private static final long serialVersionUID = 7148504528835036003L;
 
@@ -22,7 +22,7 @@ public class smile extends JPanel
     public static void main(String[] args) 
     {
 
-    var panel = new smile();
+    var panel = new Smile();
 
     var frame = new JFrame("A simple graphics program");
     frame.setSize(600, 600);

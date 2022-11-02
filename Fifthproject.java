@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class day4Madlib {
+public class Fifthproject {
 
     public static void main (String [] args)
     {
