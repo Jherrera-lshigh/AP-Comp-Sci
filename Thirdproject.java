@@ -10,5 +10,7 @@ public class Thirdproject{
         String lastName = keyboard.nextLine();
 
         System.out.println(lastName + firstName);
+        keyboard.close();
     }
+    
 }
