@@ -2,10 +2,10 @@
 public class NestedLoops {
     public static void main(String[] args) 
     {
-     int x = 5;
-     int y = 5;
+     int x = 10;
+     int y = 10;
      
-     for(y=0; y<5; y++)
+     for(y=10; y>2; y--)
      {
         for (x=0; x<=y; x++)
         {
