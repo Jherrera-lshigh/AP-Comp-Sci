@@ -18,6 +18,7 @@ public class Shape
             //Draws the Square
             for(int i = 0; i < Size; i++)
             {
+                for(int j = 0; j < Size; j++)
                 {
                     System.out.print("*");
                 }
