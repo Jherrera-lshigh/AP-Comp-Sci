@@ -62,6 +62,8 @@ public class Shape
             //Asks user what size they want for the triangle
             System.out.println("What size do you want?");
             int Size = keyboard.nextInt();
+
+            //Draw the Triangle
             for(int i=0; i<Size; i++)
             {
                 for(int j=0; j<i; j++)
@@ -79,9 +81,9 @@ public class Shape
             System.out.println();
             }
         }
-        else
+        else if (Input.equals("QUIT"))
         {
-            System.out.println("BYE");
+            System.exit(0);
         }
         
         keyboard.close();
