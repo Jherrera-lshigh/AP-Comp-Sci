@@ -1,5 +1,5 @@
 import java.util.*;
-import javax.sound.sampled.SourceDataLine;
+
 
 class Computer 
 {
@@ -80,8 +80,8 @@ public class IntrotoOOP
         
         
 
-        //System.out.println(comp1.toString());
-        //System.out.println(margaret.toString());
+        System.out.println(comp1.toString());
+        System.out.println(margaret.toString());
         System.out.println(Ezmeralda.toString());
 
         keyboard.close();
