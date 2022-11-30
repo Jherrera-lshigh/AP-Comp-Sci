@@ -9,7 +9,7 @@ public class rockPaperScissors
         1 is paper
         2 is sissors*/
 
-        int computer = (int)(Math.random() * 3);
+        int computer = (int)(java.lang.Math.random() * 3);
 
         int input = -2;
         System.out.println("Welcome to Rock Paper Sissors! Please type 0 for Rock, 1 for Paper, or 2 for Sissors");
