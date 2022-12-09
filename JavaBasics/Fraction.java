@@ -1,4 +1,3 @@
-
 public class Fraction 
 {
 
@@ -27,11 +26,23 @@ public class Fraction
 	{
 		System.out.println(fraction.numerator + "/" + fraction.denominator);
 	}
+
+	public static String fracMultiply( int one, int two, int three, int four){
+
+		int Numerator = one * three;
+		int Denominator = two * four;
+
+		while (Denominator %2 ==0 && Numerator % 2 ==0)
+		{
+			Denominator /=2;
+			Numerator /=2;
+		}
+
+		return Numerator + "/" + Denominator;
+	}
 }
 
-/*
-    Create a multiply method for fractions
-  */
+
 
   /*
     Challenge : create a simplify method
