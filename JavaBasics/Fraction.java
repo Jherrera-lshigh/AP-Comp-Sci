@@ -41,9 +41,3 @@ public class Fraction
 		return Numerator + "/" + Denominator;
 	}
 }
-
-
-
-  /*
-    Challenge : create a simplify method
-  */
