@@ -8,7 +8,8 @@ public class hotdog
         hotdogList.add("Bun");
         hotdogList.add("Weiner");
         hotdogList.add("Mustard");
-        hotdogList.add("Relish");
+        hotdogList.add("Cheese");
+      
 
         hotdogList.set(2, "Ketchup");
 
