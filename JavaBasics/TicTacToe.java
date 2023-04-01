@@ -34,6 +34,16 @@ public class TicTacToe {
             replaceBoard(board);
 
             turns += 2;
+            win = checkForWinner(board, " X ");
+            if (win) {
+                System.out.println("Player X wins");
+            } else {
+                win = checkForWinner(board, " O ");
+                if (win) {
+                    System.out.println("Player O wins");
+                }
+            }
+
         }
         keyboard.close();
 
@@ -57,6 +67,33 @@ public class TicTacToe {
             System.out.println();
         }
 
+    }
+
+    public static boolean checkForWinner(String[][] board, String symbol) {
+        // Check rows for a winning pattern
+        for (int i = 1; i < board.length; i++) {
+            if (board[i][1].equals(symbol) && board[i][2].equals(symbol) && board[i][3].equals(symbol)) {
+                return true;
+            }
+        }
+
+        // Check columns for a winning pattern
+        for (int j = 1; j < board[0].length; j++) {
+            if (board[1][j].equals(symbol) && board[2][j].equals(symbol) && board[3][j].equals(symbol)) {
+                return true;
+            }
+        }
+
+        // Check diagonals for a winning pattern
+        if (board[1][1].equals(symbol) && board[2][2].equals(symbol) && board[3][3].equals(symbol)) {
+            return true;
+        }
+        if (board[1][3].equals(symbol) && board[2][2].equals(symbol) && board[3][1].equals(symbol)) {
+            return true;
+        }
+
+        // No winning pattern found
+        return false;
     }
 
 }
