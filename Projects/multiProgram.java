@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.Scanner;
+import java.lang.Math;
 
 public class multiProgram {
 
@@ -14,10 +15,12 @@ public class multiProgram {
         binaryToDecimalExample();
         base10ToBinary();
         hourMinSec();
-        
         System.out.println("Give me a character");
         char input = keyboard.nextLine().charAt(0);
         digitLetter(input);
+        System.out.println("Give me a radius");
+        double rad = keyboard.nextDouble();
+        volueSphere(rad);
         
        
         //cls.main(args);
@@ -72,5 +75,13 @@ public class multiProgram {
        int asciivalue = ch1;
 
        System.out.println("The ASCII value is " +asciivalue);
+    }
+
+
+    public static void volueSphere(double rad)
+    {
+        
+        System.out.println((4.0/3.0)*Math.PI*(rad*rad*rad));
+        
     }
 }
