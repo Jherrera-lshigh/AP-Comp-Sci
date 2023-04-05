@@ -73,28 +73,4 @@ public class multiProgram {
 
        System.out.println("The ASCII value is " +asciivalue);
     }
-
-    public static void hourMinSec()
-    {
-    
-        int totalSecs = 143473284;
-        int hours;
-        int min;
-        int sec;
-
-        hours = totalSecs/36000;
-        min = (totalSecs%36000)/60;
-        sec = totalSecs%60;
-
-        System.out.println(totalSecs + " is equal to "+ hours+ " hours "+ min+" minutes "+ sec+ " seconds ");
-
-    }
-
-    public static void digitLetter(char input)
-    {
-       char ch1 = input;
-       int asciivalue = ch1;
-
-       System.out.println("The ASCII value is " +asciivalue);
-    }
 }
