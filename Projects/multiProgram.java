@@ -9,6 +9,7 @@ public class multiProgram
     {
         Scanner keyboard = new Scanner(System.in);
         CLS cls = new CLS();
+        /* 
         fToC(88);
         moonEarth(180);
         System.out.println("Give me name");
@@ -16,6 +17,13 @@ public class multiProgram
         reverse(user);
         binaryToDecimalExample();
         base10ToBinary();
+        hourMinSec();
+        */
+        System.out.println("Give me a character");
+        char input = keyboard.nextLine().charAt(0);
+        digitLetter(input);
+        
+       
         //cls.main(args);
     }
 
@@ -49,5 +57,29 @@ public class multiProgram
     public static void base10ToBinary()
     {
         System.out.println(Integer.toBinaryString(10));   
+    }
+
+    public static void hourMinSec()
+    {
+    
+        int totalSecs = 143473284;
+        int hours;
+        int min;
+        int sec;
+
+        hours = totalSecs/36000;
+        min = (totalSecs%36000)/60;
+        sec = totalSecs%60;
+
+        System.out.println(totalSecs + " is equal to "+ hours+ " hours "+ min+" minutes "+ sec+ " seconds ");
+
+    }
+
+    public static void digitLetter(char input)
+    {
+       char ch1 = input;
+       int asciivalue = ch1;
+
+       System.out.println("The ASCII value is " +asciivalue);
     }
 }
