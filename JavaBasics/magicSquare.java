@@ -1,114 +1,131 @@
+
 import java.util.Scanner;
 
-
 public class magicSquare {
-    public static void main(String [] args)
-    {
-    Scanner keyboard = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
 
-    System.out.println("Give me a number for length size: ");
-    int x = keyboard.nextInt();
+        System.out.println("What is the size of the square?");
+        int x = keyboard.nextInt();
 
-    System.out.println("Give me a number for width size: ");
-    int y = keyboard.nextInt();
+        int[][] array = new int[x][x];
 
-
-
-    int[][] array= new int[x][y];
-    
-        for(int i=0; i<x; i++)
+        System.out.println("Do you want random numbers");
+        if (keyboard.nextLine().equalsIgnoreCase("yes"))
+            ;
         {
-            for(int j=0; j<y;j++)
-            {
-                array[i][j]=0;
+            array = Rando(array, x);
+            System.out.println("Now generating digits");
+            while (CheckerSilent(array) == false) {
+                array = Rando(array, x);
+            }
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                System.out.print(array[i][j]);
             }
             System.out.println();
-        }   
-
-        
-
-        //Not Magic Square
-        /* array[0][0]= 7 ;
-        array[0][1]= 0 ;
-        array[0][2]= 5 ;
-        array[1][0]= 2 ;
-        array[1][1]= 4 ;
-        array[1][2]= 6 ;
-        array[2][0]= 3 ;
-        array[2][1]= 8 ;
-        array[2][2]= 1 ; */
-        
-
-        //Magic Sqaure 
-        /* 
-        array[0][0]= 4 ;
-        array[0][1]= 9 ;
-        array[0][2]= 2 ;
-        array[1][0]= 3 ;
-        array[1][1]= 5 ;
-        array[1][2]= 7 ;
-        array[2][0]= 8 ;
-        array[2][1]= 1 ;
-        array[2][2]= 6 ;
-        */
-
-        for(int i=0; i<x; i++)
-        {
-            for(int j=0; j<y;j++)
-            {
-                System.out.print(array[i][j]) ;
-            }
-            System.out.println();
-        }  
-        checkMagic(array);
-        
-        
-    }
-    
-    public static void checkMagic(int[][]matrix)
-    {
-        int totalx=0;
-        int totaly=0;
-        int totalcol=0;
-        for (int x=0; x < matrix.length; x++) 
-        {
-            if (matrix[x][0] + matrix[x][1] + matrix[x][2] == 15)
-            {
-                //System.out.println("magic");
-                totalx+=1;
-
-            }
-
         }
-        for (int j = 0; j < matrix[0].length; j++) {
-            if (matrix[0][j] + matrix[1][j] + matrix[2][j] == 15) {
-                //System.out.println("magic");
-                totaly+=1;
-            }
-        }
-        
-        if (matrix[0][0] + matrix[1][1] + matrix[2][2] == 15) {
-            //System.out.println("magic");
-            totalcol+=1;
-        }
-        if (matrix[0][2]+ matrix[1][1] + matrix[2][0] == 15) {
-            //System.out.println("magic");
-                totalcol+=1;
-        }
-        //System.out.println(totalx + totaly + totalcol);
-        int total = totalx + totaly + totalcol;
-
-        if(total == 8)
-        {  
-            System.out.println("This is a Magic Square");
-        }
-        else
-        {
-            System.out.println("Not Magic Square");
-        }
-
-        
-
+        Checker(array);
 
     }
+
+    public static int[][] Rando(int[][] array, int l) {
+        for (int x = 0; x < l; x++) {
+            for (int y = 0; y < array.length; y++) {
+                array[x][y] = (int) (Math.random() * 10);
+            }
+        }
+        return array;
+    }
+
+    public static boolean CheckerSilent(int[][] array) {
+        int MagicCheck = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            MagicCheck += array[0][i];
+        }
+
+        boolean check = true;
+
+        for (int x = 0; x < array.length; x++) {
+            int sum = 0;
+            for (int y = 0; y < array.length; y++) {
+                sum += array[x][y];
+            }
+            if (sum != MagicCheck) {
+                check = false;
+            }
+        }
+
+        int Diagonalsum = 0;
+        for (int i = 0; i < array.length; i++) {
+            Diagonalsum += array[i][i];
+        }
+
+        for (int i = 0; i < array[0].length; i++) {
+            int sum = 0;
+
+            for (int t = 0; t < array[0].length; t++) {
+                sum += array[t][i];
+            }
+
+            if (sum != MagicCheck || Diagonalsum != MagicCheck) {
+                check = false;
+            }
+        }
+
+        return check;
+    }
+
+    public static boolean Checker(int[][] jimmy) {
+
+        int MagicCheck = 0;
+
+        for (int i = 0; i < jimmy.length; i++) {
+            MagicCheck += jimmy[0][i];
+        }
+
+        boolean check = true;
+
+        for (int x = 0; x < jimmy.length; x++) {
+            int sum = 0;
+            for (int y = 0; y < jimmy.length; y++) {
+                sum += jimmy[x][y];
+            }
+            if (sum != MagicCheck) {
+                check = false;
+            }
+            System.out.println(jimmy[x][0] + "  " + jimmy[x][1] + "  " + jimmy[x][2] + " = " + sum);
+        }
+
+        for (int i = 0; i < jimmy.length; i++) {
+            System.out.print("|  ");
+        }
+
+        int Diagonalsum = 0;
+        for (int i = 0; i < jimmy.length; i++) {
+            Diagonalsum += jimmy[i][i];
+        }
+        System.out.print(Diagonalsum);
+
+        System.out.println();
+
+        for (int i = 0; i < jimmy[0].length; i++) {
+            int sum = 0;
+            for (int t = 0; t < jimmy[0].length; t++) {
+                sum += jimmy[t][i];
+            }
+            if (sum != MagicCheck) {
+                check = false;
+            }
+            System.out.print(sum + " ");
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println("Magic Square: " + check);
+        return check;
+    }
+
 }
