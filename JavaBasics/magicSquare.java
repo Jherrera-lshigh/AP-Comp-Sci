@@ -28,6 +28,7 @@ public class magicSquare {
             System.out.println();
         }
         Checker(array);
+        checkMult(array);
 
     }
 
@@ -126,6 +127,33 @@ public class magicSquare {
         System.out.println();
         System.out.println("Magic Square: " + check);
         return check;
+    }
+
+    public static boolean checkMult(int[][] board) {
+        // Check rows for a winning pattern
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][1] * board[i][2] * board[i][3]==0) {
+                return true;
+            }
+        }
+
+        // Check columns for a winning pattern
+        for (int j = 0; j < board[0].length; j++) {
+            if (board[1][j] * board[2][j]* board[3][j]==0) {
+                return true;
+            }
+        }
+
+        // Check diagonals for a winning pattern
+        if (board[1][1]* board[2][2] * board[3][3]==0) {
+            return true;
+        }
+        if (board[1][3] * board[2][2] * board[3][1]==0) {
+            return true;
+        }
+
+        // No winning pattern found
+        return false;
     }
 
 }
